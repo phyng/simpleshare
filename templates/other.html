@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block container %}
+<div id="wiki_title">{{ title }}</div>
+
+<div class="other" >
+    <input type=button class="button" value="点击下载" onclick="window.open('/f/{{ uid }}')">
+</div>
+
+<style type="text/css">
+    .other{
+        margin: 10px;
+        text-align: center;
+    }
+    .button {  
+ 
+    cursor: pointer;  
+    text-align: center;  
+    text-decoration: none;  
+    font: 14px/100% Arial, Helvetica, sans-serif;  
+    padding: .5em 2em .55em;  
+
+    }  
+</style>
+
+
+{% endblock %}

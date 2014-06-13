@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="Stylesheet" type="text/css" href="{{url_for('static', filename='stytle.css')}}">
+        <link rel="Stylesheet" type="text/css" href="{{url_for('static', filename='tango.css')}}">
+        <title>{{ title }}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <script src="http://cdn.staticfile.org/jquery/2.1.1-beta1/jquery.min.js"></script>
+        <script src="{{url_for('static', filename='dropzone.js')}}"></script>
+        <script src="{{url_for('static', filename='javascript.js')}}"></script>
+    </head>
+
+    <body>
+        <div id="container">
+            {% block container %}
+            {% endblock %}
+        </div>
+        <!--
+        <div id="footer">
+            <span>
+                Copyright © 2012-2014 Phyng.
+                Powered by <a href="http://phyng.com/" target="_blank">Phyng</a>.
+            </span>
+        </div>
+        -->
+    </body>
+
+</html>

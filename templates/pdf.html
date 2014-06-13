@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block container %}
+<div id="wiki_title">{{ title }}</div>
+
+<div class="pdf">
+    <embed src="/f/{{ uid }}" height="800" width="700" >
+
+</div>
+
+<style type="text/css">
+    .pdf{
+        margin: 0px;
+        text-align: center;
+    }
+ 
+</style>
+
+{% endblock %}

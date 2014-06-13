@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block container %}
+<div id="wiki_title">{{ title }}</div>
+
+<div class="photo">
+<img src="/f/{{ uid }}">
+</div>
+
+<style type="text/css">
+    .photo{
+        margin: 10px;
+        text-align: center;
+    }
+    img{   
+
+      border:0;   
+      margin:0;   
+      padding:0;   
+      max-width:600px;   
+      width:expression(this.width>150?"600px":this.width);   
+      max-height:600px;   
+      height:expression(this.height>150?"  600px":this.height);   
+    }  
+</style>
+
+{% endblock %}

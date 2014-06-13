@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block container %}
+<div id="wiki_title">{{ title }}</div>
+
+
+<form id="my-awesome-dropzone" action="/" class="dropzone"></form>
+
+
+<script type="text/javascript">
+     Dropzone.options.myAwesomeDropzone = { // The camelized version of the ID of the form element
+
+        // The configuration we've talked about above
+        autoProcessQueue: true,
+        uploadMultiple: true,
+        previewsContainer: false,
+        maxFilesize: 25,
+        parallelUploads: 25,
+        maxFiles: 25,
+        dictDefaultMessage: "拖拽或点击上传",
+
+        // The setting up of the dropzone
+        init: function() {
+            this.on("success", function(file, response) {
+                console.log("Filename:" + file.name + "  response:" + response);
+                //跳转网站
+                window.location.href=response;
+            });
+            this.on("removedfile", function(file) {
+                console.log("File " + file.name + "removed");
+            });
+        }
+
+      }
+</script>
+
+<style>
+.dropzone {
+    display:inline-block;
+    margin: 20px;
+    width: 600px;
+    height: 100px;
+    text-align: center;
+    color:#666;
+    padding:30px;
+
+    border:3px solid #bbb;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+}
+
+</style>
+
+
+{% endblock %}

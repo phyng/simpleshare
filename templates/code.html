@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block container %}
+<div id="wiki_title">{{ title }}</div>
+
+<div class="html">
+    {% if content %}
+    {{ content }}
+    {% endif %}
+
+    {% if error %}
+    <div class="error">
+    <h3>{{ error }}</h3>
+    </div>
+    {% endif %}
+</div>
+
+<style type="text/css">
+    .error{
+        text-align: center;
+    }
+</style>
+
+{% endblock %}

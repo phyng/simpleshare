@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block container %}
+<div id="wiki_title">{{ title }}</div>
+
+<div class="docs">
+     <iframe src="http://docs.google.com/viewer?url={{ url }}&embedded=true" width="650" height="800" style="border: none;"></iframe>
+</div>
+
+<style type="text/css">
+    .docs{
+        margin: 0px;
+        text-align: center;
+    }
+ 
+</style>
+
+{% endblock %}

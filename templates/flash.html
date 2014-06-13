@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block container %}
+<div id="wiki_title">{{ title }}</div>
+
+<div class="video">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="550" height="400" id="movie_name" align="middle">
+    <param name="movie" value="/f/{{ uid }}"/>
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="/f/{{ uid }}" width="550" height="400">
+        <param name="movie" value="/f/{{ uid }}"/>
+    <!--<![endif]-->
+        <a href="http://www.adobe.com/go/getflash">
+            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player"/>
+        </a>
+    <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+</object>
+</div>
+
+<style type="text/css">
+    .video{
+        margin: 10px;
+        text-align: center;
+    }
+</style>
+
+{% endblock %}
