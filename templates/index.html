@@ -93,9 +93,8 @@
 
 <script type="text/javascript">
         paceOptions = {  
-        startOnPageLoad : false;
-  
-    }  
+        startOnPageLoad : false,
+      }  
 </script>
 
 
@@ -115,9 +114,11 @@
         maxFiles: 25,
         dictDefaultMessage: "拖拽或点击上传",
 
+        
         // The setting up of the dropzone
         init: function() {
             this.on("success", function(file, response) {
+                Pace.stop();
                 console.log("Filename:" + file.name + "  response:" + response);
                 //跳转网站
                 window.location.href=response;
@@ -125,13 +126,19 @@
             this.on("removedfile", function(file) {
                 console.log("File " + file.name + "removed");
             });
+
+            
+
             this.on("uploadprogress", function(file, progress) {
-                Pace.start();
-                Pace.track(progress);
-                console.log('progress');
-                Pace.stop();
+                Pace.start(progress);
+                console.log(progress);
+                
             });
+
+            
         }
+
+        
 
       }
 </script>
