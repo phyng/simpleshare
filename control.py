@@ -42,7 +42,10 @@ def SaveToDB(files, filename):
     c = conn.cursor()
 
     c.execute('SELECT max(uid) FROM resource')
-    uid =  c.fetchone()[0] + 1
+    try:
+        uid =  c.fetchone()[0] + 1
+    except TypeError:
+        uid = 1
 
     filetype = secure_filename(filename).split('.')[-1].lower()
 
@@ -70,4 +73,4 @@ if __name__ == '__main__':
     #SaveToDB(files, 'test.png')
     #uid = 10
     #print ReadDB(uid)
-    pass
+    initDB()
